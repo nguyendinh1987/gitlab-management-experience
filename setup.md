@@ -1,8 +1,8 @@
 # Setup
 ## Using apt-get package
 - Preparation: (Install postfix is an optional if you want to use the email service)
-  >> sudo apt update
-  >> sudo apt install ca-certificates curl openssh-server postfix
+  >> sudo apt update  
+  >> sudo apt install ca-certificates curl openssh-server postfix  
 - Add gitlab repository into your system
   >> curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
 - Install the package: Check [3] for the list of versions
