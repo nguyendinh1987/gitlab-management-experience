@@ -3,7 +3,8 @@ This repository is to summarise my experience working on managing gitlab ce serv
 #==========================================
 ## Setup
 ### Using apt-get package
-- **_preparation_**: sudo apt update
+- preparation:
+  >> sudo apt update
 ### Using gitlab docker image
 ## Backup data
 ## Upgrade version
