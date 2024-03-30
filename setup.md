@@ -3,11 +3,12 @@
 1. [General installation guide](https://docs.gitlab.com/omnibus/installation/)
 2. [On Ubuntu installation guide](https://about.gitlab.com/install/#ubuntu)
 ## Using apt-get package
+- Note: toggle between **ce** and **ee** to install **community** or **enterprise** package.
 - Preparation: (Install postfix is optional if you want to use the email service)
   >> sudo apt update  
   >> sudo apt install ca-certificates curl openssh-server postfix  
 - Add gitlab repository into your system
-  >> curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+  >> curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
 - Install the package: For the list of versions, Check [link](https://packages.gitlab.com/gitlab/gitlab-ce).
   >> sudo apt install gitlab-ce= \<version\>  
   For example:  
