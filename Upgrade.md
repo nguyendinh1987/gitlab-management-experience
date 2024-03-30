@@ -26,11 +26,11 @@ Upgrading gitlab version is not straight forward when we have a major upgradatio
     - Run reconfigure one time:
       >> sudo gitlab-ctl reconfigure
     - Check: similar to the verification process after restoring
-      >> sudo gitlab-rake gitlab:check SANITIZE=true
-      >> sudo gitlab-rake gitlab:doctor:secrets
-      >> sudo gitlab-rake gitlab:artifacts:check
-      >> sudo gitlab-rake gitlab:lfs:check
-      >> sudo gitlab-rake gitlab:uploads:check
+      >> sudo gitlab-rake gitlab:check SANITIZE=true  
+      >> sudo gitlab-rake gitlab:doctor:secrets  
+      >> sudo gitlab-rake gitlab:artifacts:check  
+      >> sudo gitlab-rake gitlab:lfs:check  
+      >> sudo gitlab-rake gitlab:uploads:check  
   - Check background migration process: Use one of the following methods: (from version 14.x.x)
 
 # Note:
