@@ -7,7 +7,7 @@
   >> curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
 - Install the package: For the list of versions, Check [link](https://packages.gitlab.com/gitlab/gitlab-ce).
   >> sudo apt install gitlab-ce= \<version\>
-  For example:
+  For example:  
   >> sudo apt install gitlab-ce=gitlab-ce-16.9.3-ce.0
 - Configuration:
   - Setup external url which will be used for http/https push/fetch/clone service. If you have domain name, add it to here. If you want use gitlab at your local network, you can add your host server ip address. To configure, open /etc/gitlab/gitlab.rb and look for below param, and replace 'https://example.com' by your input.
