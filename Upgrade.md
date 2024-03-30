@@ -16,8 +16,7 @@ Upgrading gitlab version is not straight forward when we have a major upgradatio
 - Check background migration processes: Use one of the following methods: (from version 14.x.x)
   - Use gitlab UI (web browser): Menu->adminArea->Monitoring->Background Migrations
   - Using console: gitlab-rails runner -e production 'puts Gitlab::Database::BackgroundMigration::BatchedMigration.queued.count'. The returned message should be 0.
-- Upgrade:
-  - Loop: upgrade -> wait for backgroung migration process finished -> verify -> upgrade to another version station:
+- Upgrade: Following a loop: upgrade -> wait for backgroung migration process finished -> verify -> upgrade to another version station:
   - Upgrade:
     - If following gitlab package install:
       >> sudo apt install gitlab-ce=\<version\>- e.0
