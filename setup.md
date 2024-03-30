@@ -13,7 +13,7 @@
   For example:  
   >> sudo apt install gitlab-ce=gitlab-ce-16.9.3-ce.0
 ## Using gitlab docker image (recommended)
-- Note: this is the most convenient way to setup, and migration, beyond my experience.
+- Note: this is the most convenient way to setup, and migrate, beyond my experience.
 - Preparation: Install docker engine [link](https://docs.docker.com/engine/install/ubuntu/)
 - Launch gitlab docker container, corresponding to your targeted version [link](https://docs.gitlab.com/ee/install/docker.html). Below is the script to start docker engine.
   > sudo docker run --detach \\  
