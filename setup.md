@@ -35,7 +35,7 @@
   - name: It is a name of docker container
   - restart always: Let docker container restart if something gets wrong.
   - volume: it is folder-link between the host server and the docker container. It is to keep your changing in gitlab when docker container restart. If not, when docker container restart, everything will be refreshed. The left folders are ones on the host server, and the right folders are in the docker container. These are three important folders. GITLAB_HOME is where you keep gitlab data. For example, it could be "/home/user_name/Documents/my_gitlab_home".
-  - gitlab/gitlab-ce:<version>-ce.0: This is the version to execute. For example, gitlab/gitlab-ce:16.9.3-ce.0
+  - gitlab/gitlab-ce:\<version\>-ce.0: This is the version to execute. For example, gitlab/gitlab-ce:16.9.3-ce.0
 ## Configuration:
   - Setup external url which will be used for push/fetch/clone service through http/https. If you have domain name, add it to here. If you want use gitlab at your local network, you can add your host server ip address. To configure, open /etc/gitlab/gitlab.rb and look for below param, and replace 'https://example.com' by your input.
     >> external_url 'https://example.com'
