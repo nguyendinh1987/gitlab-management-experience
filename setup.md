@@ -13,7 +13,7 @@
 - Note: this is the most convenient way to setup, and migration, beyond my experience.
 - Preparation: Install docker engine [link](https://docs.docker.com/engine/install/ubuntu/)
 - Launch gitlab docker container, corresponding to your targeted version [link](https://docs.gitlab.com/ee/install/docker.html). Below is the script to start docker engine.
-  >> sudo docker run --detach \
+  >**_ sudo docker run --detach \
                      --hostname gitlab.example.com \
                      --env GITLAB_OMNIBUS_CONFIG="external_url 'http://gitlab.example.com'" \
                      --publish 443:443 --publish 80:80 --publish 22:22 \
@@ -23,7 +23,7 @@
                      --volume $GITLAB_HOME/logs:/var/log/gitlab \
                      --volume $GITLAB_HOME/data:/var/opt/gitlab \
                      --shm-size 256m \
-                     gitlab/gitlab-ce:<version>-ce.0
+                     gitlab/gitlab-ce:<version>-ce.0 _**
 ## Configuration:
   - Setup external url which will be used for http/https push/fetch/clone service. If you have domain name, add it to here. If you want use gitlab at your local network, you can add your host server ip address. To configure, open /etc/gitlab/gitlab.rb and look for below param, and replace 'https://example.com' by your input.
     >> external_url 'https://example.com'
