@@ -1,4 +1,10 @@
 # Upgrading gitlab version
+Upgrading gitlab version is not straight forward when we have a major upgrade from outdated version to the latest one. We have to go through a series of version called "version stations". Please use this [upgrade_path_tools](https://gitlab-com.gitlab.io/support/toolbox/upgrade-path/) to find a series of versions we need to go through to upgrade from the current version to the latest ones.  
+
+# Reference:
+[upgrade gitlab](https://docs.gitlab.com/ee/update/index.html#upgrade-paths)
+
+# Procedure:
 
 # Note:
 - Things to do when you upgrade gitlab from version of 12.x.x to 13.x.x
