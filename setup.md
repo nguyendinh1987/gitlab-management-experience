@@ -40,7 +40,7 @@
     >> external_url 'https://example.com'
   - Setup alert email service: The system will send the alerts to this email if there is something wrong with your SSL certificate. It works only if you install postfix. I obmit this step. To configure, open /etc/gitlab/gitlab.rb and look for below param, and replace the example email by your email.
     >> letsencrypt['contact_emails'] = ['bob@example.com']
-  - Increase number of sidekiq workers, this will speedup background process in the gitlab server (optional). In below comment, we will run 4 sidekiq workers [link](https://docs.gitlab.com/ee/administration/sidekiq/extra_sidekiq_processes.html)
+  - Increase number of sidekiq workers, this will speedup background process in the gitlab server (optional). In below config, we will run 4 sidekiq workers [link](https://docs.gitlab.com/ee/administration/sidekiq/extra_sidekiq_processes.html)
     >> sidekiq['queue_groups'] = ['*'] * 4
   - Update config: Save changes and close gitlab.rb. Then execute below command
     >> sudo gitlab-ctl reconfigure
