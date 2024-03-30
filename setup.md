@@ -26,7 +26,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--volume $GITLAB_HOME/logs:/var/log/gitlab \\  
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--volume $GITLAB_HOME/data:/var/opt/gitlab \\  
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--shm-size 256m \\  
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gitlab/gitlab-ce:<version>-ce.0
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gitlab/gitlab-ce:\<version\>-ce.0
 - Explanation of params in the script:
   - detach: This option will let docker container run in background. To access deployed container, use "sudo docker exec -it <container_name> bash". For example, "sudo docker exec -it gitlab bash". We will use this to config gitlab server in docker container.
   - env: This option will assign value to the param GITLAB_OMNIBUS_CONFIG, which is the domain gitlab server will link to, so that you can access from world wide. If you dont have domain name, you can set it as your host server IP. For example, your host server IP is 0.0.0.0, then we have "external_url 'http://0.0.0.0'"
