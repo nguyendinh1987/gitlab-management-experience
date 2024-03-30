@@ -1,4 +1,7 @@
 # Setup
+## References:
+1. [General installation guide](https://docs.gitlab.com/omnibus/installation/)
+2. [On Ubuntu installation guide](https://about.gitlab.com/install/#ubuntu)
 ## Using apt-get package
 - Preparation: (Install postfix is optional if you want to use the email service)
   >> sudo apt update  
