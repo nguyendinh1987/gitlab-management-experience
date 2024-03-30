@@ -13,7 +13,7 @@ Upgrading gitlab version is not straight forward when we have a major upgradatio
 
 # Procedure:
 - Back up the current version [backup_and_restore](https://github.com/nguyendinh1987/gitlab-management-experience/blob/main/backup_and_restore.md)
-- Check background migration processes:
+- Check background migration processes: Use one of the following methods: (from version 14.x.x)
   - Use gitlab UI (web browser): Menu->adminArea->Monitoring->Background Migrations
   - Using console: gitlab-rails runner -e production 'puts Gitlab::Database::BackgroundMigration::BatchedMigration.queued.count'. The returned message should be 0.
 - Upgrade:
@@ -31,7 +31,7 @@ Upgrading gitlab version is not straight forward when we have a major upgradatio
       >> sudo gitlab-rake gitlab:artifacts:check  
       >> sudo gitlab-rake gitlab:lfs:check  
       >> sudo gitlab-rake gitlab:uploads:check  
-  - Check background migration process: Use one of the following methods: (from version 14.x.x)
+  - Check background migration process
 
 # Note:
 - Things to do when you upgrade gitlab from version of 12.x.x to 13.x.x
