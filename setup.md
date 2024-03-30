@@ -6,7 +6,7 @@
 - Add gitlab repository into your system
   >> curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
 - Install the package: For the list of versions, Check [link](https://packages.gitlab.com/gitlab/gitlab-ce).
-  >> sudo apt install gitlab-ce= \<version\>
+  >> sudo apt install gitlab-ce= \<version\>  
   For example:  
   >> sudo apt install gitlab-ce=gitlab-ce-16.9.3-ce.0
 - Configuration:
