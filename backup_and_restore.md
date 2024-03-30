@@ -29,11 +29,11 @@
     >> \#NOTE: "_gitlab_backup.tar" is omitted from the name  
     >> sudo gitlab-backup restore BACKUP=11493107454_2018_04_25_10.6.4-ce
   - Restart and verify the restored process:
-    >> sudo gitlab-ctl restart
-    >> sudo gitlab-rake gitlab:check SANITIZE=true
-    >> \# In GitLab 13.1 and later, check database values can be decrypted especially if /etc/gitlab/gitlab-secrets.json was restored, or if a different server is the target for the restore.
-    >> sudo gitlab-rake gitlab:doctor:secrets
-    >> \# For added assurance, you can perform an integrity check on the uploaded files:
-    >> sudo gitlab-rake gitlab:artifacts:check
-    >> sudo gitlab-rake gitlab:lfs:check
-    >> sudo gitlab-rake gitlab:uploads:check
+    >> sudo gitlab-ctl restart  
+    >> sudo gitlab-rake gitlab:check SANITIZE=true  
+    >> \# In GitLab 13.1 and later, check database values can be decrypted especially if /etc/gitlab/gitlab-secrets.json was restored, or if a different server is the target for the restore.  
+    >> sudo gitlab-rake gitlab:doctor:secrets  
+    >> \# For added assurance, you can perform an integrity check on the uploaded files:  
+    >> sudo gitlab-rake gitlab:artifacts:check  
+    >> sudo gitlab-rake gitlab:lfs:check  
+    >> sudo gitlab-rake gitlab:uploads:check  
