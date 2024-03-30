@@ -1,18 +1,21 @@
 # Upgrading gitlab version
-Upgrading gitlab version is not straight forward when we have a major upgrade from outdated version to the latest one. We have to go through a series of version called "version stations". Please use this [upgrade_path_tools](https://gitlab-com.gitlab.io/support/toolbox/upgrade-path/) to find a series of versions we need to go through to upgrade from the current version to the latest ones.  
+Upgrading gitlab version is not straight forward when we have a major upgradation from the outdated version to the latest one. We have to go through a series of versions called "version stations". Please use this [upgrade_path_tools](https://gitlab-com.gitlab.io/support/toolbox/upgrade-path/) to find a series of versions we need to go through to upgrade from the current version to the latest ones.  
 
 # Reference:
 [upgrade gitlab](https://docs.gitlab.com/ee/update/index.html#upgrade-paths)
 
 # Things to note before starting:
 - Identify a supported upgrade path. The last minor release of the previous major version is always a required stop due to the background migrations being introduced in the last minor version. Use [upgrade_path_tools](https://gitlab-com.gitlab.io/support/toolbox/upgrade-path/).
-- Ensure that any background migrations have been fully completed before upgrading to a new major version. Especially, when we start upgrading from version 14.x.x, in which background migration might take a day to complete.
+- Ensure that any background migrations have been fully completed before upgrading to a new major version. Especially, when we start upgrading from version 14.x.x, in which background migration might take a day to complete. It depends on a number of sidekiq workers. To speed up, we can modify a configure file gitlab.rb in /etc/gitlab:
+  >> sidekiq['queue_groups'] = ['*'] * \<a_number_of_workers\>
 - If you have enabled the Elasticsearch integration, then before proceeding with the major version upgrade, ensure that all advanced search migrations are completed. [link](https://docs.gitlab.com/ee/update/index.html#checking-for-pending-advanced-search-migrations)
 - If your GitLab instance has any runners associated with it, it is very important to upgrade them to match the current GitLab version. This ensures compatibility with GitLab versions. [link](https://docs.gitlab.com/runner/#gitlab-runner-versions)
 
 # Procedure:
 - Back up the current version [backup_and_restore](https://github.com/nguyendinh1987/gitlab-management-experience/blob/main/backup_and_restore.md)
 - Check background migration processes:
+  - Use gitlab UI (web browser): Menu->adminArea->Monitoring->Background Migrations
+  - Using console: gitlab-rails runner -e production 'puts Gitlab::Database::BackgroundMigration::BatchedMigration.queued.count'. The returned message should be 0.
 - Upgrade:
   - Loop: upgrade -> wait for backgroung migration process finished -> verify -> upgrade to another version station:
   - Upgrade:
@@ -29,8 +32,6 @@ Upgrading gitlab version is not straight forward when we have a major upgrade fr
       >> sudo gitlab-rake gitlab:lfs:check
       >> sudo gitlab-rake gitlab:uploads:check
   - Check background migration process: Use one of the following methods: (from version 14.x.x)
-    - Use gitlab UI (web browser): Menu->adminArea->Monitoring->Background Migrations
-    - Using console: gitlab-rails runner -e production 'puts Gitlab::Database::BackgroundMigration::BatchedMigration.queued.count'. The returned message should be 0.
 
 # Note:
 - Things to do when you upgrade gitlab from version of 12.x.x to 13.x.x
