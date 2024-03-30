@@ -19,5 +19,5 @@
   - Stop the processes that are connected to the database. Leave the rest of GitLab running:
     >> sudo gitlab-ctl stop puma  
     >> sudo gitlab-ctl stop sidekiq  
-    >> # Verify    
+    >> Verify by    
     >> sudo gitlab-ctl status  
